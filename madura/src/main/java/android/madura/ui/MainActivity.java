@@ -2,7 +2,7 @@ package android.madura.ui;
 
 import android.content.Intent;
 import android.madura.AgoraSampleReferences.model.ConstantApp;
-import android.madura.tescallmodularity.R;
+import android.madura.R;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

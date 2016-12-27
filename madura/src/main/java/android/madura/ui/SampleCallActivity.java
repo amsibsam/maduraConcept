@@ -1,12 +1,11 @@
 package android.madura.ui;
 
 import android.graphics.PorterDuff;
+import android.madura.R;
 import android.os.Handler;
 import android.madura.Madura;
 import android.madura.AgoraSampleReferences.model.ConstantApp;
-import android.madura.tescallmodularity.R;
 import android.madura.event.CallEvent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
