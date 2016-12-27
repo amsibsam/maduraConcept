@@ -13,13 +13,20 @@ import pub.devrel.easypermissions.EasyPermissions;
  * Created by rahardyan on 27/12/16.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks{
+public abstract class BaseActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     protected static final int RC_PERMISSIONS = 1;
 
     private static final String[] PERMISSIONS = {
             "android.permission.WRITE_EXTERNAL_STORAGE",
             "android.permission.READ_EXTERNAL_STORAGE",
-            "android.permission.RECORD_AUDIO"
+            "android.permission.RECORD_AUDIO",
+            "android.permission.INTERNET",
+            "android.permission.RECORD_AUDIO",
+            "android.permission.CAMERA",
+            "android.permission.MODIFY_AUDIO_SETTINGS",
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.WRITE_EXTERNAL_STORAGE",
+            "android.permission.BLUETOOTH"
     };
 
     @Override

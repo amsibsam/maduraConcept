@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.madura.AgoraSampleReferences.model.ConstantApp;
 import android.madura.Madura;
-import android.madura.tescallmodularity.R;
 import android.madura.event.CallEvent;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateUtils;

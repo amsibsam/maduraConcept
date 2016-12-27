@@ -11,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(android.madura.tescallmodularity.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
-        findViewById(android.madura.tescallmodularity.R.id.test_agora).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.test_agora).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SampleCallActivity.class)
