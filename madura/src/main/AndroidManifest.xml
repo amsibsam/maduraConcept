@@ -14,7 +14,7 @@
         android:allowBackup="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="android.madura.ui.SampleCallActivity"></activity>
+        <activity android:name="android.madura.ui.CallActivity"></activity>
     </application>
 
 </manifest>

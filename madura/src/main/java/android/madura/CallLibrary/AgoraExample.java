@@ -94,6 +94,7 @@ public class AgoraExample extends CallLibrary implements AGEventHandler {
     @Override
     public void endCall() {
         leaveChannel();
+        listener.onConversationEnd();
     }
 
     @Override

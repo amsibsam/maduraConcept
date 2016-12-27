@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.test_agora).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SampleCallActivity.class)
+                startActivity(new Intent(MainActivity.this, CallActivity.class)
                         .putExtra(ConstantApp.ACTION_KEY_CHANNEL_NAME, "channelDap"));
             }
         });

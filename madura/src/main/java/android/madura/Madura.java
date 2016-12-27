@@ -5,6 +5,7 @@ import android.content.Context;
 import android.madura.AgoraSampleReferences.threadhelper.WorkerThread;
 import android.madura.CallLibrary.AgoraExample;
 import android.madura.event.CallEvent;
+import android.madura.event.OnEndCallClickListener;
 import android.widget.RelativeLayout;
 
 /**
@@ -14,16 +15,31 @@ import android.widget.RelativeLayout;
 public class Madura {
     private static AgoraExample callLibrary;
     private static WorkerThread mWorkerThread;
+    private static OnEndCallClickListener callActivityClickListener;
+    private static CallConfigs callConfigs;
 
     public Madura() {
     }
 
     public static void init(Context context) {
         callLibrary = new AgoraExample(context);
+        callConfigs = new CallConfigs();
+    }
+
+    public static CallConfigs getCallConfigs(){
+        return callConfigs;
     }
 
     public static void setListener(CallEvent listener){
         callLibrary.setListener(listener);
+    }
+
+    public static void setEndCallClickListener(OnEndCallClickListener callClickListener){
+        callActivityClickListener = callClickListener;
+    }
+
+    public static OnEndCallClickListener getCallActivityClickListener(){
+        return callActivityClickListener;
     }
 
     public static void setRootLayout(Activity activity, RelativeLayout rootLayout, RelativeLayout smallVideo, String key, String mode){
