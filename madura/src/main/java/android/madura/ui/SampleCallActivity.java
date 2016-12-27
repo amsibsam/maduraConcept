@@ -31,6 +31,7 @@ public class SampleCallActivity extends BaseActivity implements CallEvent {
         targetView(); //target xml view
         initMaduraSdk(); //init madura
         setButtonResponse(); //set button onclick
+        requestPermissions();
     }
 
     @Override
