@@ -28,4 +28,8 @@
     // DO NOT TRANSLATE
     <string name="bit_rate_value_with_unit">%d kbps</string>
     <string name="frame_rate_value_with_unit">%d fps</string>
+
+    <!--Dialog-->
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 </resources>

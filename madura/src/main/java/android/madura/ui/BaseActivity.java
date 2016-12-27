@@ -1,5 +1,6 @@
 package android.madura.ui;
 
+import android.madura.R;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
@@ -55,6 +56,6 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {
-
+        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this, "Please grant permissions to make apps working properly!", R.string.ok, R.string.cancel, perms);
     }
 }
