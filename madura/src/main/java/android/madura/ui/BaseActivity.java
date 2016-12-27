@@ -2,6 +2,7 @@ package android.madura.ui;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
@@ -37,6 +38,12 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
     @Override
