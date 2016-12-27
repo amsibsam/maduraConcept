@@ -21,13 +21,11 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
             "android.permission.WRITE_EXTERNAL_STORAGE",
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.RECORD_AUDIO",
-            "android.permission.INTERNET",
             "android.permission.RECORD_AUDIO",
             "android.permission.CAMERA",
             "android.permission.MODIFY_AUDIO_SETTINGS",
             "android.permission.ACCESS_NETWORK_STATE",
-            "android.permission.WRITE_EXTERNAL_STORAGE",
-            "android.permission.BLUETOOTH"
+            "android.permission.WRITE_EXTERNAL_STORAGE"
     };
 
     @Override
@@ -56,6 +54,6 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {
-        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this, "Please grant permissions to make apps working properly!", R.string.ok, R.string.cancel, perms);
+
     }
 }

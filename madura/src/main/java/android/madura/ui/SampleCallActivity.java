@@ -1,7 +1,9 @@
 package android.madura.ui;
 
 import android.graphics.PorterDuff;
+import android.madura.BuildConfig;
 import android.madura.R;
+import android.os.Build;
 import android.os.Handler;
 import android.madura.Madura;
 import android.madura.AgoraSampleReferences.model.ConstantApp;
@@ -14,6 +16,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.List;
+
+import pub.devrel.easypermissions.EasyPermissions;
+
 public class SampleCallActivity extends BaseActivity implements CallEvent {
     private RelativeLayout rootContainer, smallVideoView;
     private TextView callDuration;
@@ -24,14 +30,38 @@ public class SampleCallActivity extends BaseActivity implements CallEvent {
     final Handler handler = new Handler();
     private boolean mAudioMuted = false;
 
+    private static final String[] PERMISSIONS = {
+            "android.permission.WRITE_EXTERNAL_STORAGE",
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.RECORD_AUDIO",
+            "android.permission.RECORD_AUDIO",
+            "android.permission.CAMERA",
+            "android.permission.MODIFY_AUDIO_SETTINGS",
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_call);
         targetView(); //target xml view
-        initMaduraSdk(); //init madura
         setButtonResponse(); //set button onclick
-        requestPermissions();
+        Log.d("amsibsam", "android version "+Build.VERSION.SDK_INT);
+        if (Build.VERSION.SDK_INT < 23){
+            initMaduraSdk();
+        } else {
+            if (EasyPermissions.hasPermissions(this, PERMISSIONS)){
+                initMaduraSdk();
+            } else {
+                requestPermissions();
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -51,6 +81,13 @@ public class SampleCallActivity extends BaseActivity implements CallEvent {
     @Override
     public void onCallFailed() {
 //        TODO: notify user (callback not implemented yet)
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        super.onPermissionsGranted(requestCode, perms);
+        Log.d("amsibsam", "on Permission granted");
+        initMaduraSdk();
     }
 
     private void targetView() {
